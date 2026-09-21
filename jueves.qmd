@@ -1,0 +1,33 @@
+---
+title: "Jueves 24 Sep"
+format: 
+    html:
+        embed-resources: true
+        theme: cosmo
+execute: 
+    echo: false
+---
+
+```{r}
+#| message: false
+#| warning: false
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+jueves <- tribble(
+  ~Hora         , ~Evento                                                                                                  ,
+  "12:00"       , "Coté y Martín llegan"                                                                                   ,
+  "12:30"       , "Alejandra llega"                                                                                        ,
+  "12:35"       , "Vamos en metro a casa de María (Guinardó, aprox 1h)"                                                    ,
+  "13:35"       , "Comida (pollo a l'ast)"                                                                                 ,
+  "14:30-16:30" , "Vuelta por el barrio, entrada a Sant Pau (puertas abiertas)"                                            ,
+  "18:00-19:30" , "Subida a turons / bunkers"                                                                              ,
+  "20:00-22:00" , "Más abierto. Puede ser concierto en Nou Barris y cena en la esquinica / pasear por Dreta de l'Eixample"
+)
+```
+
+```{r}
+jueves |> gt() |> opt_stylize(style = 2, color = "green")
+```

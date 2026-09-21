@@ -1,0 +1,32 @@
+---
+title: "Sábado 26 Sep"
+format: 
+    html:
+        embed-resources: true
+        theme: cosmo
+execute: 
+    echo: false
+---
+
+```{r}
+#| message: false
+#| warning: false
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+sabado <- tribble(
+  ~Hora      , ~Evento                                                                  ,
+  "Desayuno" , "Podemos desayunar en casa o fuera"                                      ,
+  "Mañana"   , "Plaça Espanya, subida a Montjuïc, Palau Albèniz y jardín botánico."     ,
+  "Comida"   , "Podemos picar algo en las piscinas"                                     ,
+  "Tarde"    , "Entrada al MNAC (gratis). Coté tiene concierto a las 16:30 en el Fòrum" ,
+)
+```
+
+```{r}
+sabado |>
+  gt() |>
+  opt_stylize(style = 2, color = "green")
+```

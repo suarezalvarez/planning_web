@@ -1,0 +1,33 @@
+---
+title: "Domingo 27 Sep"
+format: 
+    html:
+        embed-resources: true
+        theme: cosmo
+execute: 
+    echo: false
+---
+
+```{r}
+#| message: false
+#| warning: false
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+domingo <- tribble(
+  ~Hora      , ~Evento                                                                                                  ,
+  "Desayuno" , "Podemos desayunar en casa o fuera"                                                                      ,
+  "Mañana"   , "Vermú con gente de la uni, sosialisasion"                                                               ,
+  "Comida"   , "Seguramente incluida en el vermú"                                                                       ,
+  "Tarde"    , "No está claro. Igual explorar más Gràcia."                                                              ,
+  "Noche"    , "Coté duerme en Sitges. María, Ale, Martín en Barcelona. Maletas para moverse a Sitges al día siguiente"
+)
+```
+
+```{r}
+domingo |>
+  gt() |>
+  opt_stylize(style = 2, color = "green")
+```

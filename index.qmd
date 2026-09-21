@@ -1,0 +1,11 @@
+---
+title: "Planning para fin de semana en Barcelona"
+format: 
+    html:
+        embed-resources: true
+        theme: cosmo
+---
+
+## Resumen
+
+Vamos a llegar a Barcelona el jueves 24 a las 12:30, y estaremos hasta el domingo 27. Estaremos en casa de María en el Guinardó (tardamos unos 20 min al centro en transporte público, cerca del barrio de Gràcia caminando).

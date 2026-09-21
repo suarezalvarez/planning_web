@@ -1,0 +1,35 @@
+---
+title: "Viernes 25 Sep"
+format: 
+    html:
+        embed-resources: true
+        theme: cosmo
+execute: 
+    echo: false
+---
+
+```{r}
+#| message: false
+#| warning: false
+library(gt)
+library(tidyverse)
+```
+
+```{r}
+viernes <- tribble(
+  ~Hora         , ~Evento                                                                                                                                          ,
+  "8:30"        , "Bajar al centro a desayunar. Dependiendo de la hora podemos pensar si desayunar en casa"                                                        ,
+  "9:30-13:30"  , "Empezar visita al centro. Ciutat Vella (Gòtic, Catedral, Raval, Born, Ciutadella). Otras ideas: Brunells, Hoffman"                              ,
+  "13:30-15:00" , "Comida por el centro. Senyor Vermut, Bosco..."                                                                                                  ,
+  "15:00-..."   , "Podemos volver a casa a descansar."                                                                                                             ,
+  "Tarde"       , "Ir a zona playa / Poblenou / Barceloneta / Ciutadella, o <a href = 'https://lanitdelarecerca.cat/node/barcelona-valles/'>Nit de la recerca</a>" ,
+  "Noche"       , "Hay conciertos en la playa por la Mercè"
+)
+```
+
+```{r}
+viernes |>
+  mutate(Evento = map(Evento, gt::html)) |>
+  gt() |>
+  opt_stylize(style = 2, color = "green")
+```
